@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passwortschutz</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .login-container {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"], button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Passwort erforderlich</h2>
+        <input type="password" id="password" placeholder="Passwort eingeben">
+        <button onclick="checkPassword()">Login</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const correctPassword = "Niels"; // Das hier ist das Passwort, das du definierst
+
+            if (password === correctPassword) {
+                window.location.href = "home.html"; // Zielseite bei erfolgreicher Eingabe
+            } else {
+                alert("Falsches Passwort. Bitte versuche es erneut.");
+            }
+        }
+    </script>
+</body>
+</html>
